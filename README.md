@@ -2,7 +2,7 @@
 
 # HackSC 2017 Website
 
-This is the main repository for the HackSC website. It is built on React with scalability in mind. All logic for the app lies in the `app` folder. The `internals` folder contains various configuration files, generators, and templates. The `server` folder holds production and development files. 
+This is the main repository for the HackSC website. It is built on React and Node with scalability in mind. All logic for the app lies in the `app` folder. The `internals` folder contains various configuration files, generators, and templates. The `server` folder holds production and development files. 
 
 # Commands
 

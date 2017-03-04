@@ -1,7 +1,7 @@
 /*
  * HomePage
  *
- * This is the first thing users see of our App, at the '/' route
+ * This is the first thing users see of HackSC, at the '/' route
  *
  * NOTE: while this component should technically be a stateless functional
  * component (SFC), hot reloading does not currently support SFCs. If hot
