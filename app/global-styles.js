@@ -2,29 +2,31 @@ import { injectGlobal } from 'styled-components';
 
 /* eslint no-unused-expressions: 0 */
 injectGlobal`
-  html,
+  html {
+    box-sizing:border-box;
+  }
+  html *,
+  html *:before,
+  html *:after {
+    box-sizing:inherit;
+
+    font: 700 100% 'Space Mono', Monaco, Consolas, Courier-New, monospace;
+    /* FONT OPTIMIZATION */
+    -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
+    -webkit-text-size-adjust:100%;
+  }
+
   body {
-    height: 100%;
+    display: block;
+    padding: 0;
+    margin: 0;
     width: 100%;
-  }
+    height: 100%;
+    overflow: hidden;
 
-  body {
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  }
-
-  body.fontLoaded {
-    font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  }
-
-  #app {
-    background-color: #fafafa;
-    min-height: 100%;
-    min-width: 100%;
-  }
-
-  p,
-  label {
-    font-family: Georgia, Times, 'Times New Roman', serif;
-    line-height: 1.5em;
+    background-color: #0BDDEF;
+    color: #FFF;
+    font-size: 14px;
   }
 `;

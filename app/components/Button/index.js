@@ -28,9 +28,8 @@ const MainButton = styled.button`
 `;
 
 function Button(props) {
-
     return (
-      <MainButton>{props.message}</MainButton>
+      <MainButton onClick={props.handleRoute}>{props.message}</MainButton>
     );
 }
 
