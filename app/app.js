@@ -10,10 +10,12 @@ import 'babel-polyfill';
 // Import all the third party stuff
 import React from 'react';
 import ReactDOM from 'react-dom';
+import Helmet from 'react-helmet';
 import { Provider } from 'react-redux';
 import { applyRouterMiddleware, Router, browserHistory } from 'react-router';
 import { syncHistoryWithStore } from 'react-router-redux';
 import { useScroll } from 'react-router-scroll';
+import ReactGA from 'react-ga';
 import 'sanitize.css/sanitize.css';
 
 // Import root app
@@ -63,13 +65,23 @@ const rootRoute = {
   childRoutes: createRoutes(store),
 };
 
+//set up Google Analytics
+ReactGA.initialize('UA-91351441-1');
+
+var logPageView = function() {
+  ReactGA.set({ page: window.location.pathname });
+  ReactGA.pageview(window.location.pathname);
+}
+
 const render = (messages) => {
   ReactDOM.render(
     <Provider store={store}>
       <LanguageProvider messages={messages}>
+
         <Router
           history={history}
           routes={rootRoute}
+          onUpdate={logPageView}
           render={
             // Scroll to top when going to a new page, imitating default browser
             // behaviour

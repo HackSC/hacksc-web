@@ -33,6 +33,22 @@ export default function createRoutes(store) {
         importModules.catch(errorLoading);
       },
     }, {
+      path: '/interest',
+      name: 'interestPage',
+      getComponent(location, cb) {
+        import('containers/InterestPage')
+          .then(loadModule(cb))
+          .catch(errorLoading);
+      },
+    }, {
+      path: '/sponsor',
+      name: 'sponsorPage',
+      getComponent(location, cb) {
+        import('containers/SponsorPage')
+          .then(loadModule(cb))
+          .catch(errorLoading);
+      },
+    }, {
       path: '*',
       name: 'notfound',
       getComponent(nextState, cb) {
