@@ -21,6 +21,7 @@ const MainButton = styled.button`
     padding: 5px 10px;
     background-color: #FFFA00;
     color: #0BDDEF;
+    margin: 5px;
 
     &:hover {
         color: #F9728D;
