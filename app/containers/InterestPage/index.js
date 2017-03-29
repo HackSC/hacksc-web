@@ -13,159 +13,6 @@ import FormGenerator from 'components/FormGenerator';
 import styled from 'styled-components';
 import Button from 'components/Button';
 
-let json = {
-  "action": "https://example.org",
-  "method": "POST",
-  "sections": [
-  {
-    "title": "What is your name?",
-    "items": [
-      {
-        "type": "text",
-        "name": "firstName",
-        "label": "first name"
-      },
-      {
-        "type": "text",
-        "name": "lastName",
-        "label": "last name"
-      }
-    ]
-  },
-  {
-    "title": "What is your email?",
-    "items": [
-      {
-        "type": "email",
-        "name": "email",
-        "value": "email",
-        "placeholder": "email",
-        "label": "email",
-        "description": "Email",
-        "required": true
-      },
-    ]
-  },
-  {
-    "title" : "What categories are you interested in?",
-    "items" : [
-    {
-      "type": "checkbox",
-      "name": "checkbox",
-      "description": "Checkbox",
-      "required": true,
-      "options": [
-        {
-          "label": "a",
-          "value": 1
-        },
-        {
-          "label": "b",
-          "value": 2
-        },
-        {
-          "label": "c",
-          "value": 3
-        }
-      ]
-    },
-    ]
-  },
-  {
-    "title": "When were you born?",
-    "items": [
-      {
-        "type": "date",
-        "name": "date",
-        "value": "date",
-        "placeholder": "date",
-        "label": "date",
-        "description": "Date",
-        "required": true,
-        "condition": {
-          "index": 0,
-          "value": ["2"]
-        }
-      }
-    ]
-  },
-  {
-    "title": "These are examples of other input types:",
-    "items": [
-      {
-        "type": "file",
-        "name": "file",
-        "label": "file",
-        "description": "File",
-        "required": true,
-        "condition": {
-          "index": 2,
-          "value": "test"
-        }
-      },
-      {
-        "type": "radio",
-        "description": "Radio",
-        "options": [
-          {
-            "name": "radio",
-            "label": "a",
-            "value": 1
-          },
-          {
-            "name": "radio",
-            "label": "b",
-            "value": 2,
-            "checked": true
-          },
-          {
-            "name": "radio",
-            "label": "c",
-            "value": 3
-          }
-        ]
-      },
-      {
-        "type": "range",
-        "description": "Range",
-        "label": "range",
-        "min": 0,
-        "max": 100,
-        "step": 5
-      },
-      {
-        "type": "select",
-        "name": "select",
-        "description": "Select",
-        "label": "select",
-        "options": [
-          {
-            "label": "a",
-            "value": 1
-          },
-          {
-            "label": "b",
-            "value": 2
-          },
-          {
-            "label": "c",
-            "value": 3
-          }
-        ]
-      },
-      {
-        "type": "url",
-        "name": "url",
-        "value": "url",
-        "placeholder": "url",
-        "label": "url",
-        "description": "URL",
-        "required": true
-      }
-    ],
-  }
-  ]
-}
 
 let Container = styled.div `
   display: flex;
@@ -200,6 +47,9 @@ const BackButton = styled(Button)`
 
 export class InterestPage extends React.Component { // eslint-disable-line react/prefer-stateless-function
   render() {
+
+    let json = require("./form.json")
+
     return (
       <Container>
         <BackButton message={"Back"} handleRoute={() => this.props.dispatch(push('/'))} />

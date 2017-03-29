@@ -13,6 +13,7 @@ import TickForm from 'components/TickForm'
 import InputForm from 'components/InputForm'
 import SelectForm from 'components/SelectForm'
 import styled from 'styled-components'
+import Button from 'components/Button'
 
 let Form = styled.form`
     width: 800px;
@@ -30,6 +31,10 @@ let Label = styled.p`
     font-size: 20px;
 `
 
+let Submit = styled(Button)`
+    display: inline-block;
+`
+
 
 class FormGenerator extends React.Component {
   render() {
@@ -37,6 +42,7 @@ class FormGenerator extends React.Component {
             <Container>
                 <Form action={this.props.json.action} method={this.props.json.method} encType="multipart/form-data">
                     {this._generate(this.props.json)}
+                    <Submit handleRoute={() => console.log('submit!')} message={"Submit"} />
                 </Form>
             </Container>
         );
