@@ -46,6 +46,7 @@ let FileInput = styled.input`
 
 let Container = styled.div`
     padding: 10px;
+    display: inline-block;
 `
 
 function InputForm(props) {
@@ -54,7 +55,7 @@ function InputForm(props) {
         return (
             <Container>
                 <Label>{props.data.label}</Label>
-                <TextInput type={props.data.type}/>
+                <TextInput type={props.data.type} name={props.data.name}/>
             </Container>
         )
     }
@@ -62,7 +63,7 @@ function InputForm(props) {
         return (
             <Container>
                 <Label>{props.data.label}</Label>
-                <FileInput type={props.data.type}/>
+                <FileInput type={props.data.type} name={props.data.name}/>
             </Container>
         )
     }
@@ -71,7 +72,7 @@ function InputForm(props) {
     return (
         <Container>
             <Label>{props.data.label}</Label>
-            <Input type={props.data.type}/>
+            <Input type={props.data.type} name={props.data.name}/>
         </Container>
     )
 }

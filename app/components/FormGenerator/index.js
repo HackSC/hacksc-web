@@ -21,14 +21,24 @@ let Form = styled.form`
     padding: 50px;
 `
 
+let Container = styled.div`
+    margin: 20px;
+`
+
+let Label = styled.p`
+    color: black;
+    font-size: 20px;
+`
+
+
 class FormGenerator extends React.Component {
   render() {
         return (
-            <div>
+            <Container>
                 <Form action={this.props.json.action} method={this.props.json.method} encType="multipart/form-data">
                     {this._generate(this.props.json)}
                 </Form>
-            </div>
+            </Container>
         );
     }
 
@@ -37,26 +47,35 @@ class FormGenerator extends React.Component {
         if (!json)
             return;
 
-        return json.items.map((item, index) => {
-            let type = item.type;
-            switch (type) {
-                case "checkbox":
-                case "radio":
-                    return <TickForm key={index} data={item}/>
+        return json.sections.map((section, i) => {
 
-                case "date":
-                case "email":
-                case "file":
-                case "range":
-                case "url":
-                    return <InputForm key={index} data={item}/>;
+            let items = section.items.map((item, index) => {
+                let type = item.type;
+                switch (type) {
+                    case "checkbox":
+                    case "radio":
+                        return <TickForm key={index} data={item}/>
 
-                case "select":
-                    return <SelectForm key={index} data={item}/>;
+                    case "date":
+                    case "email":
+                    case "file":
+                    case "range":
+                    case "url":
+                        return <InputForm key={index} data={item}/>;
 
-                default:
-                    return null;
-            }
+                    case "select":
+                        return <SelectForm key={index} data={item}/>;
+
+                    default:
+                        return <InputForm key={index} data={item}/>;
+                }
+            });
+            return (
+                <Container key={i}>
+                    <Label>{section.title}</Label>
+                    {items}
+                </Container>
+            )
         });
     }
 }

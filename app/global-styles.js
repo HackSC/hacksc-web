@@ -4,7 +4,7 @@ import { injectGlobal } from 'styled-components';
 injectGlobal`
   html {
     box-sizing:border-box;
-    height: 100%
+    min-height: 100%
   }
   html *,
   html *:before,
@@ -23,15 +23,13 @@ injectGlobal`
     padding: 0;
     margin: 0;
     width: 100%;
-    height: 100%;
-    overflow: hidden;
-
+    min-height: 100%
     background-color: #0BDDEF;
     color: #FFF;
     font-size: 14px;
   }
 
   #app {
-    height: 100%
+    min-height: 100%
   }
 `;

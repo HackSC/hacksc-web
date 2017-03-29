@@ -13,7 +13,6 @@ import styled from 'styled-components';
 
 
 const MainButton = styled.button`
-    appearance: none;
     outline: none;
     border: 0;
     cursor: pointer;
@@ -30,7 +29,7 @@ const MainButton = styled.button`
 
 function Button(props) {
     return (
-      <MainButton onClick={props.handleRoute}>{props.message}</MainButton>
+      <MainButton onClick={props.handleRoute} className={`${props.className ? props.className : ''} bc-${props.iconName}`}>{props.message}</MainButton>
     );
 }
 
