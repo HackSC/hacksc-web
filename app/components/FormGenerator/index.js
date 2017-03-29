@@ -26,6 +26,11 @@ let Container = styled.div`
     margin: 20px;
 `
 
+let SectionContainer = styled.div`
+    display: flex;
+    justify-content: space-around;
+`
+
 let Label = styled.p`
     color: black;
     font-size: 20px;
@@ -33,6 +38,7 @@ let Label = styled.p`
 
 let Submit = styled(Button)`
     display: inline-block;
+    float: right;
 `
 
 
@@ -59,6 +65,7 @@ class FormGenerator extends React.Component {
                 let type = item.type;
                 switch (type) {
                     case "checkbox":
+                        return <TickForm key={index} data={item}/>
                     case "radio":
                         return <TickForm key={index} data={item}/>
 

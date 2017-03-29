@@ -32,8 +32,4 @@ injectGlobal`
   #app {
     min-height: 100%
   }
-
-  input[type=checkbox] {
-    visibility: hidden;
-  }
 `;

@@ -91,6 +91,7 @@
       {
         "type": "radio",
         "description": "Radio",
+        "name": "radio",
         "options": [
           {
             "name": "radio",
