@@ -55,7 +55,7 @@ function InputForm(props) {
         return (
             <Container>
                 <Label>{props.data.label}</Label>
-                <TextInput type={props.data.type} name={props.data.name} placeholder={props.data.placeholder} value={props.data.value}/>
+                <TextInput type={props.data.type} name={props.data.name} placeholder={props.data.placeholder}/>
             </Container>
         )
     }
@@ -63,7 +63,7 @@ function InputForm(props) {
         return (
             <Container>
                 <Label>{props.data.label}</Label>
-                <FileInput type={props.data.type} name={props.data.name} placeholder={props.data.placeholder} value={props.data.value}/>
+                <FileInput type={props.data.type} name={props.data.name} placeholder={props.data.placeholder} />
             </Container>
         )
     }
@@ -72,7 +72,7 @@ function InputForm(props) {
     return (
         <Container>
             <Label>{props.data.label}</Label>
-            <Input type={props.data.type} name={props.data.name} placeholder={props.data.placeholder} value={props.data.value}/>
+            <Input type={props.data.type} name={props.data.name} placeholder={props.data.placeholder} />
         </Container>
     )
 }
