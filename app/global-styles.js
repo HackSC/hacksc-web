@@ -4,6 +4,7 @@ import { injectGlobal } from 'styled-components';
 injectGlobal`
   html {
     box-sizing:border-box;
+    height: 100%
   }
   html *,
   html *:before,
@@ -28,5 +29,9 @@ injectGlobal`
     background-color: #0BDDEF;
     color: #FFF;
     font-size: 14px;
+  }
+
+  #app {
+    height: 100%
   }
 `;

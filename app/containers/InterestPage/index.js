@@ -8,7 +8,8 @@ import React, { PropTypes } from 'react';
 import { connect } from 'react-redux';
 import Helmet from 'react-helmet';
 import { FormattedMessage } from 'react-intl';
-import FormGenerator from 'components/FormComponents/FormGenerator';
+import FormGenerator from 'components/FormGenerator';
+import styled from 'styled-components'
 
 let json = {
   "action": "https://example.org",
@@ -129,18 +130,31 @@ let json = {
   ]
 }
 
+let Container = styled.div `
+  display: flex;
+  justify-content: center;
+  background-image: url(${require('../../assets/bg.jpg')});
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding-top: 100px
+  height: 100%
+`
+
+
+
 export class InterestPage extends React.Component { // eslint-disable-line react/prefer-stateless-function
   render() {
     return (
-      <div>
+      <Container>
         <Helmet
           title="InterestPage"
           meta={[
             { name: 'description', content: 'Description of InterestPage' },
           ]}
         />
-        <FormGenerator json={JSON.stringify(json)}/>
-      </div>
+        <FormGenerator json={json}/>
+      </Container>
     );
   }
 }
